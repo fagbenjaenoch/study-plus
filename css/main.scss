@@ -1,0 +1,151 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    EXTERNAL STYLESHEETS IMPORTS
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+@import './fonts';
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+             VARIABLES
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+$color: (
+    primary: #f3af03,
+    primary-lighten: lighten(#f3af03, 30%),
+    primary-darken: darken(#f3af03, 30%),
+    accent: #ffffff,
+    black: #161616,
+    cta:#272727
+);
+
+$device-width: (
+    desktop:35em,
+    tab: 30em
+);
+
+$gap: 10px;
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         FUNCTIONS and MIXINS
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+@function color($color-name){
+    @return map-get($color, $color-name);
+}
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+             UTILITIES
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-btw{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: color(black);
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        GENERAL STYLINGS
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html,body{
+    color: color(black);
+    overflow-x: hidden;
+}
+
+.hero-img{
+    background-image: url(../assets/hero-img.jpg);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-position-x: -180px;
+    background-position-y: -10px;
+    background-repeat: no-repeat;
+}
+
+header{
+    margin: $gap * 2;
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+
+    .logo{
+        align-items: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .nav ul li a{
+        margin: 0 $gap;
+        font-weight: 700;
+        transition: 200ms;
+
+        &:hover{
+            color: color(primary);
+            border-bottom: 3px solid;
+        }
+    }
+
+// @MEDIA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    // @media only screen (max-width:300px) {
+    //     background: ;
+    // }
+}
+
+main{
+    margin: 10rem $gap;
+    width: 75%;
+
+
+    h1{
+        font-size: 3em;
+        margin-bottom: $gap * 3;
+        
+
+        strong{
+            color: color(primary);
+            border-bottom: 5px solid;
+            padding: 0 initial;
+        }
+    }
+
+    blockquote{
+        margin-bottom: $gap;
+    }
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    max-width: 100%;
+    padding: $gap;
+    color: color(accent);
+    background: color(primary-darken);
+    margin: 0;
+}
