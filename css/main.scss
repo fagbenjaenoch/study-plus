@@ -141,11 +141,74 @@ main{
 }
 
 footer{
+    max-width: 100%;
     position: relative;
     bottom: 0;
     max-width: 100%;
-    padding: $gap;
     color: color(accent);
-    background: color(primary-darken);
+    background: color(primary);
     margin: 0;
+
+    .footer-container{
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        grid-auto-rows: 1fr;
+        margin: $gap;
+        padding: $gap;
+        gap: $gap * 3;
+
+        .email-list-signup{
+            p{
+                margin: $gap 0;
+            }
+
+            label{
+                margin: 0 0 $gap 0;
+                display: flex;
+                flex-direction: column;
+
+                input{
+                    width: 75%;
+                    height: 2em;
+                    border-radius: 5px;
+                    border: none;
+                    outline-color: color(primary);
+                }
+            }
+            
+            button{
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                border: none;
+                color: color(accent);
+                background: color(primary-darken);
+                transition: 300ms ease;
+                margin: $gap 0 0 0;
+
+                &:hover{
+                    background: color(primary-lighten);
+                    color: color(primary-darken);
+                }
+            }
+        }
+
+        .footer-links{
+
+            a{
+                transition: 300ms ease;
+                &:hover{
+                    color: color(primary-lighten)
+                }
+            }
+        }
+
+    }
+    .copyright{
+        background: color(primary-darken);
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: $gap;
+    }
 }
