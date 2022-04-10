@@ -152,15 +152,20 @@ footer{
     .footer-container{
         display: grid;
         grid-template-columns: repeat(1fr);
-        grid-auto-rows: 1fr;
+        grid-template-rows: 1fr;
         margin: $gap;
         padding: $gap;
         gap: $gap * 3;
 
-        .email-list-signup{
+        form{
+           
             p{
                 margin: $gap 0;
             }
+        }
+        .email-list-signup{
+            // border-radius: $gap;
+            // border: 2px solid;
 
             label{
                 margin: 0 0 $gap 0;
