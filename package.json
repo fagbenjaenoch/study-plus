@@ -1,0 +1,16 @@
+{
+  "name": "christian",
+  "version": "1.0.0",
+  "description": "A christian study website",
+  "main": "../js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "christian",
+    "studyplus",
+    "community"
+  ],
+  "author": "Fagbenja Enoch",
+  "license": "ISC"
+}
