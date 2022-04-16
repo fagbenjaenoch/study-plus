@@ -86,6 +86,7 @@ html,body{
     z-index: -1;
     background-position-x: -180px;
     background-position-y: -10px;
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -153,6 +154,7 @@ footer{
         display: grid;
         grid-template-columns: repeat(1fr);
         grid-template-rows: 1fr;
+        place-items: center;
         margin: $gap;
         padding: $gap;
         gap: $gap * 3;
@@ -160,12 +162,15 @@ footer{
         form{
            
             p{
+                text-align: center;
                 margin: $gap 0;
             }
         }
         .email-list-signup{
             // border-radius: $gap;
             // border: 2px solid;
+            place-self: center;
+            max-width: 50vw;
 
             label{
                 margin: 0 0 $gap 0;
@@ -173,7 +178,7 @@ footer{
                 flex-direction: column;
 
                 input{
-                    width: 75%;
+                    width: 100%;
                     height: 2em;
                     border-radius: 5px;
                     border: none;
@@ -182,7 +187,7 @@ footer{
             }
             
             button{
-                width: 100px;
+                width: 100%;
                 height: 30px;
                 border-radius: 5px;
                 border: none;
