@@ -90,6 +90,16 @@ html,body{
     background-repeat: no-repeat;
 }
 
+//create a gradient effect on the hero image
+
+.hero-img::after{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #161616;
+    z-index: 1;
+}
+
 header{
     margin: $gap * 2;
     backdrop-filter: blur(30px);
@@ -148,20 +158,21 @@ footer{
     max-width: 100%;
     color: color(accent);
     background: color(primary);
+    backdrop-filter: blur(30px);
     margin: 0;
 
     .footer-container{
         display: grid;
         grid-template-columns: repeat(1fr);
-        grid-template-rows: 1fr;
+        // grid-template-rows: 1fr;
         place-items: center;
         margin: $gap;
         padding: $gap;
         gap: $gap * 3;
 
         form{
-           
-            p{
+            max-width: 50vw;
+            h3{
                 text-align: center;
                 margin: $gap 0;
             }
@@ -180,6 +191,7 @@ footer{
                 input{
                     width: 100%;
                     height: 2em;
+                    // padding: .3rem;
                     border-radius: 5px;
                     border: none;
                     outline-color: color(primary);
@@ -220,5 +232,10 @@ footer{
         bottom: 0;
         width: 100%;
         padding: $gap;
+    }
+}
+@media only screen (max-width:700px) {
+    .email-list-signup{
+        max-width: 75%;
     }
 }
