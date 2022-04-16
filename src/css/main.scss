@@ -104,6 +104,7 @@ header{
     margin: $gap * 2;
     backdrop-filter: blur(30px);
     border-radius: 15px;
+    z-index: 1000;
 
     .logo{
         align-items: center;
@@ -155,7 +156,6 @@ footer{
     max-width: 100%;
     position: relative;
     bottom: 0;
-    max-width: 100%;
     color: color(accent);
     background: color(primary);
     backdrop-filter: blur(30px);
@@ -234,8 +234,36 @@ footer{
         padding: $gap;
     }
 }
-@media only screen (max-width:700px) {
-    .email-list-signup{
-        max-width: 75%;
+
+@media only screen and (max-width:700px) {
+    .nav{
+        position: fixed;
+        background: color(black);
+        width: 60%;
+        height: 1040px;
+        top: 0;
+        right: 0;
+        z-index: 999;
+
+        ul{
+            margin-top: $gap*10;
+            text-align: center;
+            flex-direction: column;
+
+            li,a{
+                margin-top: $gap;
+                color: color(accent);
+            }
+        }
+    }
+}
+
+@keyframes intro {
+    from{
+        transform: translateY(-100px);
+    }
+
+    to{
+        transform: translateY(0px);
     }
 }
