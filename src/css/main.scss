@@ -237,11 +237,10 @@ main{
 
 footer{
     max-width: 100%;
-    position: relative;
+    // position: relative;
     bottom: 0;
     color: color(accent);
     background: color(primary);
-    backdrop-filter: blur(30px);
     margin: 0;
 
     .footer-container{
@@ -311,7 +310,7 @@ footer{
     }
     .copyright{
         background: color(primary-darken);
-        position: relative;
+        // position: relative;
         bottom: 0;
         width: 100%;
         padding: $gap;
@@ -319,11 +318,25 @@ footer{
 }
 
 @media (max-width:700px) {
+    
+    header{
+        margin: 0;
+        padding: 0;
+    }
+
+    /*{
+        ::-webkit-scrollbar-button{
+            background: color(color-cta);
+            width: 10%;
+        }
+    }*/
+
     .nav{
-        position: fixed;
+        position: absolute;
         background: color(black);
+        // margin: 0;
         width: 60%;
-        height: 1040px;
+        min-height: 100vh;
         top: 0;
         right: 0;
         z-index: 999;
@@ -339,6 +352,7 @@ footer{
             }
         }
     }
+
 }
 
 @keyframes intro {
