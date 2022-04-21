@@ -144,6 +144,26 @@ ul {
   font-family: 'Montserrat', sans-serif;
 }
 
+::-webkit-scrollbar {
+  background: #272727;
+  width: 20px;
+  padding: 5px;
+}
+
+::-webkit-scrollbar-button {
+  background: skyblue;
+}
+
+::-webkit-scrollbar-button:hover {
+  background: #136180;
+}
+
+::-webkit-scrollbar-track {
+  background: #fedf91;
+  border-radius: 10px;
+  height: 20px;
+}
+
 html, body {
   color: #161616;
   overflow-x: hidden;
@@ -305,16 +325,15 @@ footer .copyright {
 }
 
 @media (max-width: 700px) {
+  ::-webkit-scrollbar {
+    background: #272727;
+    width: 5px;
+    padding: 5px;
+  }
   header {
     margin: 0;
     padding: 0;
   }
-  /*{
-        ::-webkit-scrollbar-button{
-            background: color(color-cta);
-            width: 10%;
-        }
-    }*/
   .nav {
     position: absolute;
     background: #161616;

@@ -154,6 +154,30 @@ ul{
     font-family: 'Montserrat', sans-serif;
 }
 
+::-webkit-scrollbar{
+      background: color(cta);
+      width: 20px;
+      padding: 5px;
+} 
+
+::-webkit-scrollbar-button{
+    background: skyblue;
+}
+
+::-webkit-scrollbar-button:hover{
+    background: rgb(19, 97, 128);
+}
+
+::-webkit-scrollbar-track{
+    background: color(primary-lighten);
+    border-radius: 10px;
+    height: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: color(white);
+}
+
 html,body{
     color: color(black);
     overflow-x: hidden;
@@ -205,6 +229,7 @@ header{
             border-bottom: 3px solid;
         }
     }
+
 
 // @MEDIA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -318,18 +343,17 @@ footer{
 }
 
 @media (max-width:700px) {
+
+    ::-webkit-scrollbar{
+        background: color(cta);
+        width: 5px;
+        padding: 5px;
+  } 
     
     header{
         margin: 0;
         padding: 0;
     }
-
-    /*{
-        ::-webkit-scrollbar-button{
-            background: color(color-cta);
-            width: 10%;
-        }
-    }*/
 
     .nav{
         position: absolute;
