@@ -145,23 +145,17 @@ ul {
 }
 
 ::-webkit-scrollbar {
-  background: #272727;
   width: 20px;
-  padding: 5px;
 }
 
-::-webkit-scrollbar-button {
-  background: skyblue;
-}
-
-::-webkit-scrollbar-button:hover {
-  background: #136180;
+::-webkit-scrollbar-thumb {
+  background: #f3af03;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fedf91;
-  border-radius: 10px;
-  height: 20px;
+  background: #ffffff;
 }
 
 html, body {
@@ -326,9 +320,13 @@ footer .copyright {
 
 @media (max-width: 700px) {
   ::-webkit-scrollbar {
-    background: #272727;
     width: 5px;
-    padding: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #272727;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
   }
   header {
     margin: 0;
