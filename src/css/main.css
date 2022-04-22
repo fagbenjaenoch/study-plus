@@ -319,6 +319,9 @@ footer .copyright {
 }
 
 @media (max-width: 700px) {
+  header {
+    border-radius: 0px;
+  }
   ::-webkit-scrollbar {
     width: 5px;
   }
