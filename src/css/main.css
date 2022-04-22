@@ -190,7 +190,7 @@ header {
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   border-radius: 15px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 header .logo {
@@ -211,6 +211,16 @@ header .nav ul li a {
 header .nav ul li a:hover {
   color: #f3af03;
   border-bottom: 3px solid;
+}
+
+header .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header .sticky + main {
+  padding-top: 102px;
 }
 
 main {
