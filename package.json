@@ -1,5 +1,5 @@
 {
-  "name": "StudyPlus",
+  "name": "studyplus",
   "version": "1.0.0",
   "description": "A christian study website with Sass compiling autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
   "keywords": [
