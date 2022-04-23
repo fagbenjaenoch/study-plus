@@ -270,7 +270,7 @@ footer{
 
     .footer-container{
         display: grid;
-        grid-template-columns: repeat(1fr);
+        grid-template-columns: 1fr;
         // grid-template-rows: 1fr;
         place-items: center;
         margin: $gap;
