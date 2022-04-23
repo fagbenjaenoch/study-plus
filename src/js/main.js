@@ -1,15 +1,9 @@
-window.onscroll = function(){stick()};
+const body = document.querySelector("body");
+const header = document.querySelector("header");
+const menu = document.querySelector("menu");
+const menuBtn = document.querySelector("menuBtn");
+const cancelBtn = document.querySelector("cancelBtn");
 
-var header = document.getElementById("header");
-
-var sticky = header.offsetTop;
-
-function stick() {
-    if (window.pageYOffset > sticky){
-        header.classList.add("sticky");
-    }
-
-    else{
-        header.classList.remove("sticky");
-    }
+window.onscroll = () =>{
+    this.scroll > 20 ? header.classList.add("sticky") : header.classList.remove("sticky");
 }
