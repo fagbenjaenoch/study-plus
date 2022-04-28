@@ -176,11 +176,11 @@ html,body{
 
 .hero-img{
     background-image: url(../assets/hero-img.jpg);
-    min-width: 100vw;
-    min-height: 100vh;
+    // background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
-    top: 0;
-    right: 0;
+    inset: 0;
     z-index: -1;
     background-position-x: -180px;
     background-position-y: -10px;
@@ -306,29 +306,38 @@ header{
 }
 
 main{
-    margin-block: 15rem;
-    width: 75%;
-    padding-inline: $gap * 5;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    // color: color(accent);
+    display: grid;
+    justify-items: start;
+    section{
+        padding-block: 20vw;
+        width: 75%;
+        padding-inline: $gap * 5;
 
-    h1{
-        font-size: 3em;
-        margin-bottom: $gap * 3;
-        
-
-        strong{
-            color: color(primary);
-            border-bottom: 5px solid;
-            padding: 0 initial;
+        h1{
+            font-size: 3em;
+            margin-bottom: $gap * 3;
+            
+    
+            strong{
+                color: color(primary);
+                border-bottom: 5px solid;
+                padding: 0 initial;
+            }
         }
-    }
-
-    blockquote{
-        margin-bottom: $gap;
+    
+        blockquote{
+            margin-bottom: $gap;
+        }
     }
 }
 
 footer{
-    max-width: 100%;
+    max-width: 100vw;
     position: relative;
     bottom: 0;
     color: color(accent);
@@ -339,7 +348,7 @@ footer{
         display: grid;
         grid-template-columns: 1fr;
         place-items: center;
-        margin: $gap * 3;
+        padding: $gap * 3;
         // padding: $gap;
         gap: $gap * 3;
 
