@@ -176,8 +176,8 @@ html,body{
 
 .hero-img{
     background-image: url(../assets/hero-img.jpg);
-    width: 100%;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
@@ -199,10 +199,13 @@ html,body{
 }
 
 header{
-    margin: $gap * 2;
+    position: fixed;
+    width: 100%;
+    padding-inline: $gap * 5;
+    // margin: $gap * 2;
     backdrop-filter: blur(30px);
-    border-radius: 15px;
-    z-index: 100;
+    // border-radius: 15px;
+    z-index: 1;
 
     .logo{
         align-items: center;
@@ -210,7 +213,7 @@ header{
         font-weight: bold;
     }
 
-    .nav ul li a{
+    .navbar ul li a{
         margin: 0 $gap;
         font-weight: 700;
         transition: 200ms;
@@ -220,28 +223,92 @@ header{
             border-bottom: 3px solid;
         }
     }
-
-.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
-.sticky + main{
-    padding-top: 102px;
+
+.navbarToggle{
+    display: none;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: .8rem;
+    right: 2rem;
+    z-index: 1000;
+    background-color: transparent;
+    background-image: url(../assets/icons/Menu.svg);
+    color: color(accent);
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
 }
 
-// @MEDIA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.navbarToggle:focus{
+    outline: white solid 2px;
+    // outline-offset: 5px;
+}
 
-    // @media only screen (max-width:300px) {
-    //     background: ;
+@media (max-width:700px) {
+
+    ::-webkit-scrollbar{
+        width: 5px;
+    } 
+
+    ::-webkit-scrollbar-thumb{
+        background: color(primary);
+        border: 0;
+        background-clip: content-box;
+    }
+    
+    header{
+        margin: 0;
+        padding: 0;
+    }
+
+    // @supports (backdrop-filter: blur(3em)){
+    //     background: rgb(0 0 0 / .2);
     // }
+
+    .navbar{
+        position: fixed;
+        background: color(black);
+        inset: 0 0 0 30%;
+        min-height: 100vh;
+        z-index: 999;
+        // backdrop-filter: blur(1.5rem);
+        transform: translateX(100%);
+        transition: transform 400ms ease-in-out;
+
+        ul{
+            margin-top: $gap*10;
+            text-align: center;
+            flex-direction: column;
+
+            li,a{
+                margin-top: $gap;
+                color: color(accent);
+            }
+        }
+    }
+
+    .navbar[data-visible=true]{
+        transform: translateX(0%);
+    }
+
+    .navbarToggle{
+        display: block;
+    }
+
+    .navbarToggle[aria-expanded="true"]{
+        background-image: url(../assets/icons/Cross.svg);
+        background-color: color(accent);
+    }
 }
 
 main{
-    margin: 10rem $gap;
+    margin-block: 15rem;
     width: 75%;
-
+    padding-inline: $gap * 5;
 
     h1{
         font-size: 3em;
@@ -262,7 +329,7 @@ main{
 
 footer{
     max-width: 100%;
-    // position: relative;
+    position: relative;
     bottom: 0;
     color: color(accent);
     background: color(primary);
@@ -271,24 +338,20 @@ footer{
     .footer-container{
         display: grid;
         grid-template-columns: 1fr;
-        // grid-template-rows: 1fr;
         place-items: center;
-        margin: $gap;
-        padding: $gap;
+        margin: $gap * 3;
+        // padding: $gap;
         gap: $gap * 3;
 
         form{
-            max-width: 50vw;
+            width: clamp(30rem,50vw,60vw);
             h3{
                 text-align: center;
                 margin: $gap 0;
             }
         }
         .email-list-signup{
-            // border-radius: $gap;
-            // border: 2px solid;
             place-self: center;
-            max-width: 50vw;
 
             label{
                 margin: 0 0 $gap 0;
@@ -298,7 +361,6 @@ footer{
                 input{
                     width: 100%;
                     height: 2em;
-                    // padding: .3rem;
                     border-radius: 5px;
                     border: none;
                     outline-color: color(primary);
@@ -322,83 +384,25 @@ footer{
             }
         }
 
+    }
+    .copyright{
+        background: color(primary-darken);
+        // position: relative;
+        // bottom: 0;
+        width: 100%;
+        row-gap: $gap * 3;
+        padding: $gap;
+
         .footer-links{
 
             a{
+                text-align: center;
+                color: color(accent);
                 transition: 300ms ease;
                 &:hover{
                     color: color(primary-lighten)
                 }
             }
         }
-
-    }
-    .copyright{
-        background: color(primary-darken);
-        // position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: $gap;
-    }
-}
-
-@media (max-width:700px) {
-
-    header{
-        border-radius: 0px;
-    }
-
-    ::-webkit-scrollbar{
-        // background: transparent;
-        width: 5px;
-    } 
-
-    ::-webkit-scrollbar-track{
-        background: color(cta);
-    }
-
-    ::-webkit-scrollbar-thumb{
-        background: color(accent);
-        // border: 2px solid transparent;
-        // background-clip: content-box;
-    }
-
-    
-    header{
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav{
-        position: absolute;
-        background: color(black);
-        // margin: 0;
-        width: 60%;
-        min-height: 100vh;
-        top: 0;
-        right: 0;
-        z-index: 999;
-
-        ul{
-            margin-top: $gap*10;
-            text-align: center;
-            flex-direction: column;
-
-            li,a{
-                margin-top: $gap;
-                color: color(accent);
-            }
-        }
-    }
-
-}
-
-@keyframes intro {
-    from{
-        transform: translateY(-100px);
-    }
-
-    to{
-        transform: translateY(0px);
     }
 }

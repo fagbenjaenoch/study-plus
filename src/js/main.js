@@ -1,9 +1,16 @@
-const body = document.querySelector("body");
-const header = document.querySelector("header");
-const menu = document.querySelector("menu");
-const menuBtn = document.querySelector("menuBtn");
-const cancelBtn = document.querySelector("cancelBtn");
+const navbar = document.querySelector(".navbar");
+const navbarToggle = document.querySelector(".navbarToggle");
 
-window.onscroll = () =>{
-    this.scroll > 20 ? header.classList.add("sticky") : header.classList.remove("sticky");
-}
+navbarToggle.addEventListener("click", () => {
+    const visibility = navbar.getAttribute("data-visible");
+
+    if (visibility === "false"){
+        navbar.setAttribute("data-visible", "true");
+        navbarToggle.setAttribute("aria-expanded", "true");
+    }else{
+        navbar.setAttribute("data-visible", "false");
+        navbarToggle.setAttribute("aria-expanded", "false");
+    }
+    console.log(nav.getAttribute("data-visible"));
+})
+

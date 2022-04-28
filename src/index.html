@@ -16,15 +16,16 @@
             <img src="assets/icons/Book.png" alt="Logo of a Book">
             <p class="bold thick">StudyPlus<sup>+</sup></p>
         </div>
-        <div class="nav">
-            <nav>
+        <button class="navbarToggle" aria-controls="navbar" aria-expanded="false"></button>
+        <div id="navbar" class="navbar" data-visible="false">
+            <navbar>
                 <ul class="flex-row">
                     <li><a href="#" aria-hidden="false">Home</a></li>
                     <li><a href="#" aria-hidden="false">About</a></li>
                     <li><a href="#" aria-hidden="false">Contact Us</a></li>
                     <li><a href="#" aria-hidden="false">Donate</a></li>
                 </ul>
-            </nav>
+            </navbar>
         </div>
     </header>
     <!-- main-section -->
@@ -53,19 +54,22 @@
                     <button id="submit-form">Submit</button>
                 </div>
             </form>
-            
-            <div class="footer-links flex-col">
-                <ul>
-                    <li><a href="#" aria-hidden="false">Home</a></li>
-                    <li><a href="#" aria-hidden="false">About</a></li>
-                    <li><a href="#" aria-hidden="false">Contact Us</a></li>
-                    <li><a href="#" aria-hidden="false">Donate</a></li>
-                </ul>
-            </div>
         </div>
-        <div class="copyright flex-row">
-            <p>Made by &looparrowright; Leading</p>
-            <small>&emsp; &copy; Copyright 2022</small>
+
+        <div class="copyright flex-col align-center">
+            <div class="footer-links flex-col align-center">
+                    <ul>
+                        <li><a href="#" aria-hidden="false">Home</a></li>
+                        <li><a href="#" aria-hidden="false">About</a></li>
+                        <li><a href="#" aria-hidden="false">Contact Us</a></li>
+                        <li><a href="#" aria-hidden="false">Donate</a></li>
+                    </ul>
+            </div>
+
+            <div class="flex-row">
+                <p>Made by &looparrowright; Leading</p>
+                <small>&emsp; &copy; Copyright 2022</small>
+            </div>
         </div>
     </footer>
 </body>
