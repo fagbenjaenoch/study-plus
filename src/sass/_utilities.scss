@@ -1,0 +1,68 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+             UTILITIES
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-btw{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: color(black);
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        GENERAL STYLINGS
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar{
+    //   background: transparent;
+      width: 20px;
+} 
+
+::-webkit-scrollbar-thumb{
+    background: color(primary);
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-track{
+    background: color(accent);
+}
+
+
+@media (max-width:700px) {
+
+    ::-webkit-scrollbar{
+        width: 5px;
+    } 
+
+    ::-webkit-scrollbar-thumb{
+        border: 0;
+        background-clip: content-box;
+    }
+}    
