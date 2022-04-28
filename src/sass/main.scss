@@ -3,26 +3,8 @@
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
 @import 'reset';
 @import 'utilities';
+@import 'variables';
 
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-             VARIABLES
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
-
-$color: (
-    primary: #f3af03,
-    primary-lighten: lighten(#f3af03, 30%),
-    primary-darken: darken(#f3af03, 30%),
-    accent: #ffffff,
-    black: #161616,
-    cta:#272727
-);
-
-$device-width: (
-    desktop:35em,
-    tab: 30em
-);
-
-$gap: 10px;
 
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
          FUNCTIONS and MIXINS
@@ -139,9 +121,11 @@ header{
             text-align: center;
             flex-direction: column;
 
-            li,a{
-                margin-top: $gap;
-                color: color(accent);
+            li{
+                a{
+                    color: color(accent);
+                    margin-top: $gap;
+                }
             }
         }
     }
