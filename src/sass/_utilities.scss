@@ -39,6 +39,34 @@ ul{
     font-family: 'Montserrat', sans-serif;
 }
 
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+             VARIABLES
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+$color: (
+    primary: #f3af03,
+    primary-lighten: lighten(#f3af03, 30%),
+    primary-darken: darken(#f3af03, 30%),
+    accent: #ffffff,
+    black: #161616,
+    cta:#272727
+);
+
+$device-width: (
+    desktop:35em,
+    tab: 30em
+);
+
+$gap: 10px;
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         FUNCTIONS and MIXINS
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+*/
+
+@function color($color-name){
+    @return map-get($color, $color-name);
+}
+
 ::-webkit-scrollbar{
     //   background: transparent;
       width: 20px;
@@ -53,6 +81,7 @@ ul{
 ::-webkit-scrollbar-track{
     background: color(accent);
 }
+
 
 
 @media (max-width:700px) {
