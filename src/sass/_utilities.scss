@@ -67,6 +67,10 @@ $gap: 10px;
     @return map-get($color, $color-name);
 }
 
+@mixin transitionEase {
+    transition: 300ms ease;
+}
+
 ::-webkit-scrollbar{
     //   background: transparent;
       width: 20px;

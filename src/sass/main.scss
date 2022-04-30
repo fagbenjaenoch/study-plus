@@ -34,11 +34,12 @@ html,body{
 }
 
 header{
+    background-color: #ffffff2a;
     position: fixed;
     width: 100%;
-    padding-inline: $gap * 5;
+    padding-inline: $gap * 4;
+    backdrop-filter: blur(1em);
     // margin: $gap * 2;
-    backdrop-filter: blur(30px);
     // border-radius: 15px;
     z-index: 1;
 
@@ -89,11 +90,6 @@ header{
     header{
         margin: 0;
         padding: 0;
-   
-
-        // @supports (backdrop-filter: blur(3em)){
-        //     background: rgb(0 0 0 / .2);
-        // }
 
         .navbar{
             position: fixed;
@@ -103,7 +99,7 @@ header{
             z-index: 999;
             // backdrop-filter: blur(1.5rem);
             transform: translateX(100%);
-            transition: transform 400ms ease-in-out;
+            @include transitionEase;
 
             ul{
                 margin-top: $gap*10;
@@ -113,6 +109,9 @@ header{
 
                 li{
                     margin-top: $gap * 2;
+                    transform: translateY(-100vh);
+                    @include transitionEase;
+
                     a{
                         color: color(accent);
                     }
@@ -120,9 +119,31 @@ header{
             }
         }
         
+        // @supports (backdrop-filter: blur(3em)){
+
+        //     header{
+        //         backdrop-filter: none;
+        //     }
+            
+        //     .navbar{
+        //         background: rgba(255, 255, 255, 0.422);
+        //         backdrop-filter: blur(3em);
+        //     }
+        // }
 
         .navbar[data-visible=true]{
             transform: translateX(0%);
+            @include transitionEase;
+
+            li{
+                transform: translateY(0);
+
+                @for $i from 1 to 4 {
+                    li:nth-child(#{$i}){
+                        transition-delay: ($i * 0.1s) + 0.15s ;
+                    }
+                }
+            }
         }
 
         .navbarToggle{
@@ -141,9 +162,9 @@ main{
     padding: 0;
     width: 100vw;
     height: 100vh;
-    // color: color(accent);
     display: grid;
     justify-items: start;
+
     section{
         padding-block: 20vw;
         width: 75%;
@@ -152,7 +173,6 @@ main{
         h1{
             font-size: 3em;
             margin-bottom: $gap * 3;
-            
     
             strong{
                 color: color(primary);
